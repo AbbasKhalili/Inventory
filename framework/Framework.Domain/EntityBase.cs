@@ -9,6 +9,7 @@ namespace Framework.Domain
 
         public DateTime CreatedAt { get; protected set; }
         public DateTime LastModified { get; protected set; }
+        public Guid SurrogateKey { get; protected set; }
 
         public override bool Equals(object obj)
         {

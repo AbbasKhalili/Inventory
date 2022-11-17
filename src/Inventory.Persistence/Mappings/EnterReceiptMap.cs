@@ -9,9 +9,9 @@ namespace Inventory.Persistence.Mappings
         public void Configure(EntityTypeBuilder<EnterReceipt> builder)
         {
             builder.ToTable("EnterReceipts");
-            builder.HasKey(t => t.Id.Id);
+            builder.HasKey(t => t.Id);
 
-            builder.Property(t => t.Id.SurrogateKey);
+            builder.Property(t => t.SurrogateKey);
             builder.Property(t => t.CustomerName);
             builder.Property(t => t.ProductId);
             builder.Property(t => t.Quantity);

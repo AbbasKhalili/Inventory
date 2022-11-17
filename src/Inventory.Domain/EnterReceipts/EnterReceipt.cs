@@ -3,7 +3,7 @@ using System;
 
 namespace Inventory.Domain.EnterReceipts
 {
-    public class EnterReceipt : EntityBase<EnterReceiptId>, IAggregateRoot
+    public class EnterReceipt : EntityBase<long>, IAggregateRoot
     {
         //todo: CustomerName should be consider an Entity
         public string CustomerName { get; private set; }
@@ -20,6 +20,7 @@ namespace Inventory.Domain.EnterReceipts
             Status = status;
             CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
+            SurrogateKey = Guid.NewGuid();
         }
     }
 }

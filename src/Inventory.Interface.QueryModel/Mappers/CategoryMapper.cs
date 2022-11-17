@@ -16,7 +16,7 @@ namespace Inventory.Interface.QueryModel.Mappers
         {
             return new CategoryDto
             {
-                Id = category.Id.SurrogateKey,
+                Id = category.SurrogateKey,
                 Name = category.Name
             };
         }

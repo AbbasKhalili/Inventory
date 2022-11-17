@@ -19,9 +19,9 @@ namespace Inventory.Persistence.Repositories
             await _context.Instance.Set<Product>().AddAsync(product);
         }
 
-        public async Task<Product> GetBy(ProductId id)
+        public async Task<Product> GetBy(long id)
         {
-            return await _context.Instance.Set<Product>().FirstOrDefaultAsync(a => a.Id.Equals(id));
+            return await _context.Instance.Set<Product>().FirstOrDefaultAsync(a => a.Id == id);
         }
     }
 }

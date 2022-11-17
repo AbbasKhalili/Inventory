@@ -28,7 +28,7 @@ namespace Inventory.Persistence.Repositories
 
         public async Task<Category> GetBy(Guid surrogateKey)
         {
-            return await _context.Instance.Set<Category>().FirstOrDefaultAsync(a => a.Id.SurrogateKey == surrogateKey);
+            return await _context.Instance.Set<Category>().FirstOrDefaultAsync(a => a.SurrogateKey == surrogateKey);
         }
     }
 }

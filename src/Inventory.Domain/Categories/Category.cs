@@ -3,7 +3,7 @@ using System;
 
 namespace Inventory.Domain.Categories
 {
-    public class Category : EntityBase<CategoryId>, IAggregateRoot
+    public class Category : EntityBase<long>, IAggregateRoot
     {
         public string Name { get; private set; }
 
@@ -13,6 +13,7 @@ namespace Inventory.Domain.Categories
             Name = name;
             CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
+            SurrogateKey = Guid.NewGuid();
         }
     }
 }

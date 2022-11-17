@@ -8,7 +8,7 @@ namespace Inventory.DBMigration
         public override void Up()
         {
             Create.Table("Products")
-                .WithColumn("Id").AsInt64().PrimaryKey()
+                .WithColumn("Id").AsInt64().PrimaryKey().Identity()
                 .WithColumn("Name").AsString()
                 .WithColumn("Barcode").AsString()
                 .WithColumn("Description").AsString()

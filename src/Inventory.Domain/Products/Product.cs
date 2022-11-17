@@ -3,7 +3,7 @@ using System;
 
 namespace Inventory.Domain.Products
 {
-    public class Product : EntityBase<ProductId>, IAggregateRoot
+    public class Product : EntityBase<long>, IAggregateRoot
     {
         public string Name { get; private set; }
         public string Barcode { get; private set; }
@@ -23,6 +23,7 @@ namespace Inventory.Domain.Products
             Status = ProductStatus.InAvailable;
             CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
+            SurrogateKey = Guid.NewGuid();
         }
 
         public void Available()

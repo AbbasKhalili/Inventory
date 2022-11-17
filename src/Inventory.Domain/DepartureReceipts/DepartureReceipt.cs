@@ -3,7 +3,7 @@ using System;
 
 namespace Inventory.Domain.DepartureReceipts
 {
-    public class DepartureReceipt : EntityBase<DepartureReceiptId>, IAggregateRoot
+    public class DepartureReceipt : EntityBase<long>, IAggregateRoot
     {
         //todo: CustomerName should be consider an Entity
         public string CustomerName { get; private set; }
@@ -18,6 +18,7 @@ namespace Inventory.Domain.DepartureReceipts
             Quantity = quantity;
             CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
+            SurrogateKey = Guid.NewGuid();
         }
     }
 }

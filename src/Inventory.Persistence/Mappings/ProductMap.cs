@@ -9,9 +9,9 @@ namespace Inventory.Persistence.Mappings
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.ToTable("Products");
-            builder.HasKey(t => t.Id.Id);
+            builder.HasKey(t => t.Id);
 
-            builder.Property(t => t.Id.SurrogateKey);
+            builder.Property(t => t.SurrogateKey);
             builder.Property(t => t.Name);
             builder.Property(t => t.Barcode);
             builder.Property(t => t.Description);

@@ -21,7 +21,7 @@ namespace Inventory.Application.ProductHandlers
         {
             var category = await _categoryRepository.GetBy(command.CategoryId);
 
-            var product = new Product(command.Name, command.Barcode, command.Description, category.Id.Id, command.Weighted);
+            var product = new Product(command.Name, command.Barcode, command.Description, category.Id, command.Weighted);
             await _productRepository.Create(product);
         }
     }
