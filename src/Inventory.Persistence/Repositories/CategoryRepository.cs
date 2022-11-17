@@ -9,26 +9,26 @@ namespace Inventory.Persistence.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {
-        private readonly IDbContext _context;
+        private readonly DbSet<Category> _dbSet;
 
         public CategoryRepository(IDbContext context)
         {
-            _context = context;
+            _dbSet = context.Instance.Set<Category>();
         }
 
         public async Task Create(Category category)
         {
-            await _context.Instance.Set<Category>().AddAsync(category);
+            await _dbSet.AddAsync(category);
         }
 
         public async Task<List<Category>> GetAll()
         {
-            return await _context.Instance.Set<Category>().ToListAsync();
+            return await _dbSet.ToListAsync();
         }
 
         public async Task<Category> GetBy(Guid surrogateKey)
         {
-            return await _context.Instance.Set<Category>().FirstOrDefaultAsync(a => a.SurrogateKey == surrogateKey);
+            return await _dbSet.FirstOrDefaultAsync(a => a.SurrogateKey == surrogateKey);
         }
     }
 }
