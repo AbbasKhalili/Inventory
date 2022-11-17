@@ -1,5 +1,6 @@
 ﻿using Framework.Application;
 using Inventory.Application.Contract.Products;
+using Inventory.Application.Exceptions;
 using Inventory.Domain.Categories;
 using Inventory.Domain.Products;
 using System.Threading.Tasks;
@@ -20,6 +21,9 @@ namespace Inventory.Application.ProductHandlers
         public async Task Handle(CreateProductCommand command)
         {
             var category = await _categoryRepository.GetBy(command.CategoryId);
+
+            if (category is null)
+                throw new CategoryNotFoundException();
 
             var product = new Product(command.Name, command.Barcode, command.Description, category.Id, command.Weighted);
             await _productRepository.Create(product);
