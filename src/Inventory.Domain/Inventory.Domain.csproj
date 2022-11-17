@@ -8,8 +8,4 @@
     <ProjectReference Include="..\..\framework\Framework.Domain\Framework.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DepartureReceipt\" />
-  </ItemGroup>
-
 </Project>

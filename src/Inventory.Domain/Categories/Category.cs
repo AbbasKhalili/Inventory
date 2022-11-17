@@ -11,7 +11,7 @@ namespace Inventory.Domain.Categories
         public Category(string name)
         {
             Name = name;
-            CreatedOn = DateTime.Now;
+            CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
         }
     }

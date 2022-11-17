@@ -21,7 +21,7 @@ namespace Inventory.Domain.Products
             CategoryId = categoryId;
             Weighted = weighted;
             Status = ProductStatus.InAvailable;
-            CreatedOn = DateTime.Now;
+            CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
         }
 

@@ -1,23 +1,21 @@
 ﻿using Framework.Domain;
 using System;
 
-namespace Inventory.Domain.EnterReceipts
+namespace Inventory.Domain.DepartureReceipts
 {
-    public class EnterReceipt : EntityBase<EnterReceiptId>, IAggregateRoot
+    public class DepartureReceipt : EntityBase<DepartureReceiptId>, IAggregateRoot
     {
         //todo: CustomerName should be consider an Entity
         public string CustomerName { get; private set; }
         public long ProductId { get; private set; }
         public int Quantity { get; private set; }
-        public EnterReceiptStatus Status { get; private set; }
 
-        protected EnterReceipt() { }
-        public EnterReceipt(string customerName, long productId, int quantity, EnterReceiptStatus status)
+        protected DepartureReceipt() { }
+        public DepartureReceipt(string customerName, long productId, int quantity)
         {
             CustomerName = customerName;
             ProductId = productId;
             Quantity = quantity;
-            Status = status;
             CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
         }
