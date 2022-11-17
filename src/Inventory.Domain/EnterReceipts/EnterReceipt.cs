@@ -1,4 +1,5 @@
 ﻿using Framework.Domain;
+using Inventory.Domain.Contract;
 using System;
 
 namespace Inventory.Domain.EnterReceipts

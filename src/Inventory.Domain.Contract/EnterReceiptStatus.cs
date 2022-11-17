@@ -1,4 +1,4 @@
-﻿namespace Inventory.Domain.EnterReceipts
+﻿namespace Inventory.Domain.Contract
 {
     public enum EnterReceiptStatus : byte
     {

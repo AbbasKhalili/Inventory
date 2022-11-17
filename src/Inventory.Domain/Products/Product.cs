@@ -1,4 +1,6 @@
 ﻿using Framework.Domain;
+using Inventory.Domain.Categories;
+using Inventory.Domain.Contract;
 using System;
 
 namespace Inventory.Domain.Products
@@ -12,6 +14,10 @@ namespace Inventory.Domain.Products
         public bool Weighted { get; private set; }
         public ProductStatus Status { get; private set; }
 
+
+        public Category Category { get; private set; } 
+
+
         protected Product() { }
         public Product(string name, string barcode, string description, long categoryId, bool weighted)
         {
@@ -20,21 +26,15 @@ namespace Inventory.Domain.Products
             Description = description;
             CategoryId = categoryId;
             Weighted = weighted;
-            Status = ProductStatus.InAvailable;
+            Status = ProductStatus.UnAvailable;
             CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
             SurrogateKey = Guid.NewGuid();
         }
 
-        public void Available()
+        public void SetStatus(ProductStatus status)
         {
-            Status = ProductStatus.Available;
-            LastModified = DateTime.Now;
-        }
-
-        public void InAvailable()
-        {
-            Status = ProductStatus.InAvailable;
+            Status = status;
             LastModified = DateTime.Now;
         }
     }

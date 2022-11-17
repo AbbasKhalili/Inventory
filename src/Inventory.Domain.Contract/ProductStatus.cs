@@ -1,8 +1,8 @@
-﻿namespace Inventory.Domain.Products
+﻿namespace Inventory.Domain.Contract
 {
     public enum ProductStatus : byte
     {
         Available = 1,
-        InAvailable = 2
+        UnAvailable = 2
     }
 }
