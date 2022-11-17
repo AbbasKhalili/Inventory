@@ -1,10 +1,14 @@
 ﻿using Framework.Core;
+using System;
 
 namespace Framework.Domain
 {
     public abstract class EntityBase<T>
     {
         public T Id { get; protected set; }
+
+        public DateTime CreatedOn { get; protected set; }
+        public DateTime LastModified { get; protected set; }
 
         public override bool Equals(object obj)
         {
