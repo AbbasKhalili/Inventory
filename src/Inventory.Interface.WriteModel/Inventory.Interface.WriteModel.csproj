@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Application.Contract\Inventory.Application.Contract.csproj" />
+    <ProjectReference Include="..\Inventory.Interface.Contract\Inventory.Interface.Contract.csproj" />
+  </ItemGroup>
+
+</Project>
