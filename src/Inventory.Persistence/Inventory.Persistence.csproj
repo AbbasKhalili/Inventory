@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\framework\Framework.DataAccess.EF\Framework.DataAccess.EF.csproj" />
+    <ProjectReference Include="..\Inventory.Domain\Inventory.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
