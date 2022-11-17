@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\framework\Framewrok.Bootstrap\Framewrok.Bootstrap.csproj" />
+    <ProjectReference Include="..\Inventory.Application\Inventory.Application.csproj" />
+    <ProjectReference Include="..\Inventory.Interface.QueryModel\Inventory.Interface.QueryModel.csproj" />
+    <ProjectReference Include="..\Inventory.Interface.WriteModel\Inventory.Interface.WriteModel.csproj" />
+    <ProjectReference Include="..\Inventory.Persistence\Inventory.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
