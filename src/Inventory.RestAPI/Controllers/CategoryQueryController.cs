@@ -17,7 +17,7 @@ namespace Inventory.RestAPI.Controllers
             _facadeQuery = facadeQuery;
         }
 
-        [HttpGet]
+        [HttpGet("getall")]
         public async Task<List<CategoryDto>> Get()
         {
             return await _facadeQuery.GetAll();

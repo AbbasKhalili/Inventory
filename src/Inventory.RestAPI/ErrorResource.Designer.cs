@@ -59,5 +59,23 @@ namespace Inventory.RestAPI {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category NotFound..
+        /// </summary>
+        public static string _101 {
+            get {
+                return ResourceManager.GetString("_101", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product NotFound..
+        /// </summary>
+        public static string _102 {
+            get {
+                return ResourceManager.GetString("_102", resourceCulture);
+            }
+        }
     }
 }
