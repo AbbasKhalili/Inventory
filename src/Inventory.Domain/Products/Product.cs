@@ -11,9 +11,6 @@ namespace Inventory.Domain.Products
         public long CategoryId { get; private set; }
         public bool Weighted { get; private set; }
         public ProductStatus Status { get; private set; }
-        public Guid SurrogateKey { get; private set; }
-        public DateTime CreatedOn { get; private set; }
-        public DateTime LastModified { get; private set; }
 
         protected Product() { }
         public Product(string name, string barcode, string description, long categoryId, bool weighted)
@@ -23,7 +20,6 @@ namespace Inventory.Domain.Products
             Description = description;
             CategoryId = categoryId;
             Weighted = weighted;
-            SurrogateKey = Guid.NewGuid();
             Status = ProductStatus.InAvailable;
             CreatedOn = DateTime.Now;
             LastModified = DateTime.Now;
