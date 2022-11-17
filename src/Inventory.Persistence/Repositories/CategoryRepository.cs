@@ -2,11 +2,12 @@
 using Inventory.Domain.Categories;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Inventory.Persistence.Repositories
 {
-    internal class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly IDbContext _context;
 
@@ -18,6 +19,11 @@ namespace Inventory.Persistence.Repositories
         public async Task Create(Category category)
         {
             await _context.Instance.Set<Category>().AddAsync(category);
+        }
+
+        public async Task<List<Category>> GetAll()
+        {
+            return await _context.Instance.Set<Category>().ToListAsync();
         }
 
         public async Task<Category> GetBy(Guid surrogateKey)

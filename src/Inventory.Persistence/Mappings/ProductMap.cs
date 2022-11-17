@@ -18,7 +18,7 @@ namespace Inventory.Persistence.Mappings
             builder.Property(t => t.CategoryId);
             builder.Property(t => t.Weighted);
             builder.Property(t => t.Status);
-            builder.Property(t => t.CreatedOn);
+            builder.Property(t => t.CreatedAt);
             builder.Property(t => t.LastModified);
         }
     }

@@ -15,7 +15,7 @@ namespace Inventory.Persistence.Mappings
             builder.Property(t => t.CustomerName);
             builder.Property(t => t.ProductId);
             builder.Property(t => t.Quantity);
-            builder.Property(t => t.CreatedOn);
+            builder.Property(t => t.CreatedAt);
             builder.Property(t => t.LastModified);
         }
     }

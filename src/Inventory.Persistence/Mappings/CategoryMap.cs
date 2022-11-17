@@ -13,7 +13,7 @@ namespace Inventory.Persistence.Mappings
 
             builder.Property(t => t.Id.SurrogateKey);
             builder.Property(t => t.Name);
-            builder.Property(t => t.CreatedOn);
+            builder.Property(t => t.CreatedAt);
             builder.Property(t => t.LastModified);
         }
     }
