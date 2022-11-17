@@ -7,7 +7,7 @@ namespace Framework.Domain
     {
         public T Id { get; protected set; }
 
-        public DateTime CreatedOn { get; protected set; }
+        public DateTime CreatedAt { get; protected set; }
         public DateTime LastModified { get; protected set; }
 
         public override bool Equals(object obj)
