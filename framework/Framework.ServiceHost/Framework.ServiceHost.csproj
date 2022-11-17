@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentMigrator" Version="3.2.11" />
+		<PackageReference Include="FluentMigrator.Runner" Version="3.2.11" />
+		<PackageReference Include="HtmlSanitizer" Version="6.0.441" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Framework.Logger\Framework.Logger.csproj" />
+		<ProjectReference Include="..\Framewrok.Bootstrap\Framewrok.Bootstrap.csproj" />
+	</ItemGroup>
+
+</Project>
