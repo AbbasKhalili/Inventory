@@ -17,6 +17,8 @@ namespace Inventory.Persistence.Mappings
             builder.Property(t => t.Quantity);
             builder.Property(t => t.CreatedAt);
             builder.Property(t => t.LastModified);
+
+            builder.HasOne(a => a.Product).WithMany(a => a.EnterReceipts).HasForeignKey(ad => ad.ProductId);
         }
     }
 }

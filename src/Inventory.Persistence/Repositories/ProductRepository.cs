@@ -34,5 +34,9 @@ namespace Inventory.Persistence.Repositories
         {
             return await _dbSet.Include(a => a.Category).FirstOrDefaultAsync(a => a.SurrogateKey == id);
         }
+        public async Task<Product> GetBy(long id)
+        {
+            return await _dbSet.Include(a => a.Category).FirstOrDefaultAsync(a => a.Id == id);
+        }
     }
 }

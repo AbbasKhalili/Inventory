@@ -2,6 +2,7 @@
 using Inventory.Domain.Contract;
 using Inventory.Domain.EnterReceipts;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,10 +29,24 @@ namespace Inventory.Persistence.Repositories
                 .SumAsync(a => a.Quantity);
         }
 
-        public async Task<int> GetSoldCount(long productId)
+        public async Task<int> GetInStockCount(long productId)
         {
             return await _dbSet
-                .Where(a => a.ProductId == productId && a.Status == EnterReceiptStatus.Sold)
+                .Where(a => a.ProductId == productId && a.Status == EnterReceiptStatus.InStock)
+                .SumAsync(a => a.Quantity);
+        }
+
+        public async Task<int> GetDamagedCount(Guid productId)
+        {
+            return await _dbSet.Include(a => a.Product)
+                .Where(a => a.Product.SurrogateKey == productId && a.Status == EnterReceiptStatus.Damaged)
+                .SumAsync(a => a.Quantity);
+        }
+
+        public async Task<int> GetInStockCount(Guid productId)
+        {
+            return await _dbSet.Include(a => a.Product)
+                .Where(a => a.Product.SurrogateKey == productId && a.Status == EnterReceiptStatus.InStock)
                 .SumAsync(a => a.Quantity);
         }
     }
