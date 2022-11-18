@@ -8,4 +8,10 @@
     <ProjectReference Include="..\..\framework\Framework.Core\Framework.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DamagedReceipt\DTOs\" />
+    <Folder Include="DepartureReceipt\DTOs\" />
+    <Folder Include="EnterReceipt\DTOs\" />
+  </ItemGroup>
+
 </Project>
