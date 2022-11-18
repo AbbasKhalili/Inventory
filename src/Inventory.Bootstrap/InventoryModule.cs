@@ -11,6 +11,7 @@ using Inventory.Persistence.Repositories;
 using Inventory.Interface.WriteModel;
 using Inventory.Interface.QueryModel;
 using Framework.DataAccess.EF;
+using Inventory.Domain.DepartureReceipts.DomainServices;
 
 namespace Inventory.Bootstrap
 {
@@ -41,10 +42,10 @@ namespace Inventory.Bootstrap
                 .InstancePerLifetimeScope();
 
 
-            //builder.RegisterAssemblyTypes(typeof(ValidateNationalIdentity).Assembly)
-            //    .Where(a => typeof(IDomainService).IsAssignableFrom(a))
-            //    .AsImplementedInterfaces()
-            //    .InstancePerLifetimeScope();
+            builder.RegisterAssemblyTypes(typeof(InquiryExistingProductDomainService).Assembly)
+                .Where(a => typeof(IDomainService).IsAssignableFrom(a))
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
 
 
             builder.RegisterAssemblyTypes(typeof(CategoryCommandHandler).Assembly)
