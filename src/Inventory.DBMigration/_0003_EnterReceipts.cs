@@ -12,6 +12,7 @@ namespace Inventory.DBMigration
                 .WithColumn("CustomerName").AsString()
                 .WithColumn("ProductId").AsInt64()
                 .WithColumn("Quantity").AsInt32()
+                .WithColumn("Status").AsByte()
                 .WithColumn("CreatedAt").AsDateTime2()
                 .WithColumn("LastModified").AsDateTime2()
                 .WithColumn("SurrogateKey").AsGuid();
