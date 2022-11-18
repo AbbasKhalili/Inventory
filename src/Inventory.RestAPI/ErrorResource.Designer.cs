@@ -77,5 +77,23 @@ namespace Inventory.RestAPI {
                 return ResourceManager.GetString("_102", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Unavailable..
+        /// </summary>
+        public static string _103 {
+            get {
+                return ResourceManager.GetString("_103", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insufficient Inventory..
+        /// </summary>
+        public static string _104 {
+            get {
+                return ResourceManager.GetString("_104", resourceCulture);
+            }
+        }
     }
 }

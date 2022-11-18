@@ -123,4 +123,11 @@
   <data name="_102" xml:space="preserve">
     <value>Product NotFound.</value>
   </data>
+  <data name="_103" xml:space="preserve">
+    <value>Product Unavailable.</value>
+  </data>
+  <data name="_104" xml:space="preserve">
+    <value>Insufficient Inventory.</value>
+    <comment>.</comment>
+  </data>
 </root>

@@ -16,7 +16,7 @@ namespace Inventory.RestAPI.Controllers
             _facadeService = facadeService;
         }
 
-        [HttpPost(create)]
+        [HttpPost("create")]
         public async Task Post(ProductModel model)
         {
             await _facadeService.Create(model);
