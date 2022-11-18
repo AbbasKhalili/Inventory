@@ -1,5 +1,8 @@
 ﻿using Framework.Domain;
+using Inventory.Domain.DepartureReceipts.DomainServices;
+using Inventory.Domain.Products;
 using System;
+using System.Threading.Tasks;
 
 namespace Inventory.Domain.DepartureReceipts
 {
@@ -10,8 +13,11 @@ namespace Inventory.Domain.DepartureReceipts
         public long ProductId { get; private set; }
         public int Quantity { get; private set; }
 
+
+        public Product Product { get; private set; }
+
         protected DepartureReceipt() { }
-        public DepartureReceipt(string customerName, long productId, int quantity)
+        private DepartureReceipt(string customerName, long productId, int quantity)
         {
             CustomerName = customerName;
             ProductId = productId;
@@ -19,6 +25,14 @@ namespace Inventory.Domain.DepartureReceipts
             CreatedAt = DateTime.Now;
             LastModified = DateTime.Now;
             SurrogateKey = Guid.NewGuid();
+        }
+
+        public static async Task<DepartureReceipt> Create(string customerName, long productId, int quantity,
+            IInquiryExistingProductDomainService inquiryExistingProduct)
+        {
+            await inquiryExistingProduct.Inqiry(productId, quantity);
+
+            return new DepartureReceipt(customerName, productId, quantity);
         }
     }
 }

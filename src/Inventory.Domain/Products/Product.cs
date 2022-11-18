@@ -1,7 +1,11 @@
 ﻿using Framework.Domain;
 using Inventory.Domain.Categories;
 using Inventory.Domain.Contract;
+using Inventory.Domain.DepartureReceipts;
+using Inventory.Domain.EnterReceipts;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Inventory.Domain.Products
 {
@@ -15,8 +19,15 @@ namespace Inventory.Domain.Products
         public ProductStatus Status { get; private set; }
 
 
-        public Category Category { get; private set; } 
+        public Category Category { get; private set; }
 
+
+        private HashSet<DepartureReceipt> _departureReceipts = new();
+        public IEnumerable<DepartureReceipt> DepartureReceipts => _departureReceipts?.ToList();
+
+
+        private HashSet<EnterReceipt> _enterReceipts = new();
+        public IEnumerable<EnterReceipt> EnterReceipts => _enterReceipts?.ToList();
 
         protected Product() { }
         public Product(string name, string barcode, string description, long categoryId, bool weighted)

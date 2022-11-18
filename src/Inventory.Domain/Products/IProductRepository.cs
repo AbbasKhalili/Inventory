@@ -12,6 +12,7 @@ namespace Inventory.Domain.Products
 
 
         Task<Product> GetBy(Guid id);
+        Task<Product> GetBy(long id);
         Task<List<Product>> GetAll();
         
     }

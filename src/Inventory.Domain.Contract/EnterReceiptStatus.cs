@@ -2,7 +2,7 @@
 {
     public enum EnterReceiptStatus : byte
     {
-        Sold = 1,
+        InStock = 1,
         Damaged = 2
     }
 }
